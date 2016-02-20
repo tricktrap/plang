@@ -20,6 +20,7 @@
 
 calclist: /* nothing */
   | calclist exp EOL { printf("= %d\n", $2); }
+  | calclist EOL     { /* Allow empty lines */ }
   ;
 
 exp: factor /* default $$ = $1 */
