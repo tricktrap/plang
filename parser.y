@@ -19,7 +19,7 @@
 %%
 
 calclist: /* nothing */
-  | calclist exp EOL { printf("= %d\n", $2); }
+  | calclist exp EOL { printf("= %d (hex %#x)\n", $2, $2); }
   | calclist EOL     { /* Allow empty lines */ }
   ;
 
