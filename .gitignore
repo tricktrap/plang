@@ -1,1 +1,10 @@
 .vagrant
+
+# Ignore boilerplate from Flex
+lex.yy.c
+
+# Also ignore Bison definitions files
+parser.tab.*
+
+# Ignore output binary
+plang
