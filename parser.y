@@ -4,8 +4,16 @@
 %}
 
 /* declare tokens */
+/* Integer literals */
 %token NUMBER
+
+/* Numeric operators */
 %token ADD SUB MUL DIV ABS
+
+/* Parenthesis */
+%token OP CP
+
+/* end-of-line */
 %token EOL
 
 %%
@@ -26,6 +34,7 @@ factor: term
 
 term: NUMBER
   | ABS term { $$ = $2 >= 0 ? $2 : -$2; }
+  | OP exp CP { $$ = $2; }
   ;
 
 %%
